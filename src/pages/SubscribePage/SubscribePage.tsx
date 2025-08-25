@@ -1,10 +1,10 @@
-import * as SC from "./SubscribePageStyled"
-const SubscribePage:React.FC = () => {
-    return ( 
-        <SC.SubscribePageStyled>
+import * as SC from "./SubscribePageStyled";
+const SubscribePage: React.FC = () => {
+  return (
+    <SC.SubscribePageStyled>
+      <h1>Subscription</h1>
+    </SC.SubscribePageStyled>
+  );
+};
 
-        </SC.SubscribePageStyled>
-     );
-}
- 
 export default SubscribePage;
