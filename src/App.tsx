@@ -21,7 +21,7 @@ const App: React.FC = () => {
         <BurgerBtn />
       </Header>
       <BurgerPortal>
-        <BurgerMenu/>
+        <BurgerMenu/> 
       </BurgerPortal>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>

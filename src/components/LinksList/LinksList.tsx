@@ -1,6 +1,8 @@
-const LinksList = () => {
+import * as SC from "./LinksListStyled"
+
+const LinksList:React.FC = () => {
   return (
-    <ul>
+    <SC.ListStyled>
       <li>
         <a href="/">Home</a>
       </li>
@@ -10,7 +12,7 @@ const LinksList = () => {
       <li>
         <a href="subscribe">Create Your Plan</a>
       </li>
-    </ul>
+    </SC.ListStyled>
   );
 };
 
