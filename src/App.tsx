@@ -5,6 +5,8 @@ import Logo from "./components/Logo/Logo";
 import Header from "./layouts/Header/Header";
 import SharedLayout from "./layouts/SharedLayout/SharedLayout";
 import { lazy, Suspense } from "react";
+import BurgerPortal from "./components/Portal/Portal";
+import BurgerMenu from "./components/BurgerMenu/BurgerMenu";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage/AboutPage"));
@@ -18,6 +20,9 @@ const App: React.FC = () => {
         <Logo />
         <BurgerBtn />
       </Header>
+      <BurgerPortal>
+        <BurgerMenu/>
+      </BurgerPortal>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
