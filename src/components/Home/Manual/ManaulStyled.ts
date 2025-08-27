@@ -11,6 +11,8 @@ padding-left: 24px;
 padding-right: 24px;
 
 background-color: #2C343E;
+
+border-radius: 10px;
 `
 
 export const List = styled.ul`
@@ -26,6 +28,23 @@ text-align: center;
         font-weight: 900;
 
         color:#FDD6BA;
+    }
+
+    & > h5{
+        margin-bottom: 24px;
+
+        font-size: 28px;
+        line-height: 1.14;
+        font-weight: 900;
+
+        color:#fff
+    }
+
+    & > p{
+        font-size: 15px;
+        line-height: 1.67;
+
+        color:#fff;
     }
 }
 
