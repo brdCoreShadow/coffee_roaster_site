@@ -1,30 +1,26 @@
-const OrederItem = () => {
-    return ( 
-         <li>
-          <button>
-            <span>How do you drink your coffee?</span>
-          </button>
-          <ul>
+import { IOrderItemProps } from "@/utils/types";
+import * as SC from "./OrderItemStyled";
+
+const OrderItem: React.FC<IOrderItemProps> = ({ data }) => {
+  const { title, options } = data;
+
+  return (
+    <SC.OrderItemStyled>
+      <SC.OrderBtn>
+        <span>{title}</span>
+      </SC.OrderBtn>
+      <ul>
+        {options.map(({ option, description }) => {
+          return (
             <li>
-              <h5>Capsule</h5>
-              <p>Compatible with Nespresso systems and similar brewers</p>
+              <h5>{option}</h5>
+              <p>{description}</p>
             </li>
-            <li>
-              <h5>Filter</h5>
-              <p>
-                For pour over or drip methods like Aeropress, Chemex, and V60
-              </p>
-            </li>
-            <li>
-              <h5>Espresso</h5>
-              <p>
-                Dense and finely ground beans for an intense, flavorful
-                experience
-              </p>
-            </li>
-          </ul>
-        </li>
-     );
-}
- 
-export default OrederItem;
+          );
+        })}
+      </ul>
+    </SC.OrderItemStyled>
+  );
+};
+
+export default OrderItem;
