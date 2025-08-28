@@ -12,6 +12,7 @@ import Footer from "./layouts/Footer/Footer";
 import LinksList from "./components/LinksList/LinksList";
 import SocNet from "./components/SocNet/SocNet";
 import { useToggleMenu } from "./hooks/useToggleMenu";
+import Loading from "./components/Loading/Loading";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage/AboutPage"));
@@ -52,7 +53,7 @@ const App: React.FC = () => {
           <BurgerMenu />
         </BurgerPortal>
       )}
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading/>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<HomePage />} />
