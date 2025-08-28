@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 import bgHeroMob from "../../../assets/images/home/mobile/image-hero-coffeepress.jpg"
 
 export const HeroCon = styled.div`
+margin-bottom: 120px;
+
 padding-top: 100px;
 padding-bottom: 100px;
 padding-left: 24px;
