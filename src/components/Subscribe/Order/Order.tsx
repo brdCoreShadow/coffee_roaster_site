@@ -3,10 +3,10 @@ import OrderItem from "./OrderItem";
 import * as SC from "./OrderStyled";
 
 import { orderDb } from "@/utils/db";
-import { IFormValues, IHomePageProps } from "@/utils/types";
+import { IFormValues, ISubscribePageProps,  } from "@/utils/types";
 import OrderSummary from "./OrderSummary";
 
-const Order: React.FC<IHomePageProps> = ({ orderSubmit }) => {
+const Order: React.FC<ISubscribePageProps> = ({ orderSubmit }) => {
   const formik = useFormik<IFormValues>({
     initialValues: {
       drinkingType: "Capsule",

@@ -37,7 +37,7 @@ export type OrderSummaryProps = {
   order: IFormValues;
 };
 
-export interface IHomePageProps {
+export interface ISubscribePageProps {
   orderSubmit:(orderData:IFormValues)=>void;
 }
 

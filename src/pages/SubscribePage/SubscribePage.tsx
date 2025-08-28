@@ -1,10 +1,17 @@
+import Intro from "@/components/Subscribe/Intro/Intro";
 import * as SC from "./SubscribePageStyled";
-const SubscribePage: React.FC = () => {
+import Manual from "@/components/Subscribe/Manual/Manual";
+import Order from "@/components/Subscribe/Order/Order";
+import { ISubscribePageProps } from "@/utils/types";
+
+const HomePage: React.FC<ISubscribePageProps> = ({orderSubmit}) => {
   return (
     <SC.SubscribePageStyled>
-      <h1>Subscription</h1>
+      <Intro />
+      <Manual />
+      <Order orderSubmit={orderSubmit}/>
     </SC.SubscribePageStyled>
   );
 };
 
-export default SubscribePage;
+export default HomePage;

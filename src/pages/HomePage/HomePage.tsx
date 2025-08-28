@@ -1,15 +1,9 @@
-import Intro from "@/components/Home/Intro/Intro";
+import Hero from "@/components/Home/Hero/Hero";
 import * as SC from "./HomePageStyled";
-import Manual from "@/components/Home/Manual/Manual";
-import Order from "@/components/Home/Order/Order";
-import { IHomePageProps } from "@/utils/types";
-
-const HomePage: React.FC<IHomePageProps> = ({orderSubmit}) => {
+const HomePage: React.FC = () => {
   return (
     <SC.HomePageStyled>
-      <Intro />
-      <Manual />
-      <Order orderSubmit={orderSubmit}/>
+      <Hero />
     </SC.HomePageStyled>
   );
 };

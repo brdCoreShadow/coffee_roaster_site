@@ -27,7 +27,7 @@ const App: React.FC = () => {
     setOrder(orderData);
   };
 
- useEffect(() => {
+  useEffect(() => {
     if (isMenu) {
       document.body.style.overflow = "hidden";
     } else {
@@ -45,7 +45,7 @@ const App: React.FC = () => {
     <SC.AppStyled>
       <Header>
         <Logo location="header" />
-        <BurgerBtn toggleMenu={toggleMenu} isMenu={isMenu}/>
+        <BurgerBtn toggleMenu={toggleMenu} isMenu={isMenu} />
       </Header>
       {isMenu && (
         <BurgerPortal>
@@ -55,9 +55,12 @@ const App: React.FC = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
-            <Route index element={<HomePage orderSubmit={orderSubmit} />} />
+            <Route index element={<HomePage />} />
             <Route path="about" element={<AboutPage />} />
-            <Route path="subscribe" element={<SubscribePage />} />
+            <Route
+              path="subscribe"
+              element={<SubscribePage orderSubmit={orderSubmit} />}
+            />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
