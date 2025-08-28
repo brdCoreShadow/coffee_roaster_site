@@ -44,3 +44,8 @@ export interface IHomePageProps {
 export interface IPropsStyled {
    location:string; 
 }
+
+export type TMenuBtnToggle = {
+  toggleMenu:()=>void;
+  isMenu:boolean;  
+}

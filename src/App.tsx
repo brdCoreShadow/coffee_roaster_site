@@ -4,13 +4,14 @@ import BurgerBtn from "./components/BurgerBtn/BurgerBtn";
 import Logo from "./components/Logo/Logo";
 import Header from "./layouts/Header/Header";
 import SharedLayout from "./layouts/SharedLayout/SharedLayout";
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import BurgerPortal from "./components/Portal/Portal";
 import BurgerMenu from "./components/BurgerMenu/BurgerMenu";
 import { IFormValues } from "./utils/types";
 import Footer from "./layouts/Footer/Footer";
 import LinksList from "./components/LinksList/LinksList";
 import SocNet from "./components/SocNet/SocNet";
+import { useToggleMenu } from "./hooks/useToggleMenu";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage/AboutPage"));
@@ -20,9 +21,23 @@ const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 const App: React.FC = () => {
   const [order, setOrder] = useState<IFormValues | null>(null);
 
+  const { isMenu, toggleMenu } = useToggleMenu();
+
   const orderSubmit = (orderData: IFormValues) => {
     setOrder(orderData);
   };
+
+ useEffect(() => {
+    if (isMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenu]);
 
   console.log(order);
 
@@ -30,11 +45,13 @@ const App: React.FC = () => {
     <SC.AppStyled>
       <Header>
         <Logo location="header" />
-        <BurgerBtn />
+        <BurgerBtn toggleMenu={toggleMenu} isMenu={isMenu}/>
       </Header>
-      <BurgerPortal>
-        <BurgerMenu />
-      </BurgerPortal>
+      {isMenu && (
+        <BurgerPortal>
+          <BurgerMenu />
+        </BurgerPortal>
+      )}
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
