@@ -1,8 +1,9 @@
+import { IPropsStyled } from "@/utils/types";
 import * as SC from "./LinksListStyled"
 
-const LinksList:React.FC = () => {
+const LinksList:React.FC<Partial <IPropsStyled>> = ({location}) => {
   return (
-    <SC.ListStyled>
+    <SC.ListStyled location={location!}>
       <li>
         <a href="/">Home</a>
       </li>

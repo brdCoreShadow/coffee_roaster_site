@@ -3,9 +3,10 @@ import OrderItem from "./OrderItem";
 import * as SC from "./OrderStyled";
 
 import { orderDb } from "@/utils/db";
-import { IFormValues } from "@/utils/types";
+import { IFormValues, IHomePageProps } from "@/utils/types";
+import OrderSummary from "./OrderSummary";
 
-const Order: React.FC = () => {
+const Order: React.FC<IHomePageProps> = ({ orderSubmit }) => {
   const formik = useFormik<IFormValues>({
     initialValues: {
       drinkingType: "Capsule",
@@ -19,22 +20,22 @@ const Order: React.FC = () => {
     },
   });
 
-console.log(formik.values);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
 
+    orderSubmit(formik.values);
+  };
 
   return (
-    <SC.OrderCon>
-      <ul>
+    <SC.OrderCon onSubmit={handleSubmit}>
+      <SC.List>
         {orderDb.map((el) => (
-          <OrderItem key={el.id} data={el} formik={formik}/>
+          <OrderItem key={el.id} data={el} formik={formik} />
         ))}
-      </ul>
-      <div>
-        <h3></h3>
-    </div>
-    <button>Create my plan!</button>
+      </SC.List>
+      <OrderSummary order={formik.values} />
+      <SC.SubmitBtn type="submit">Create my plan!</SC.SubmitBtn>
     </SC.OrderCon>
-    
   );
 };
 

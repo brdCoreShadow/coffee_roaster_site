@@ -30,5 +30,17 @@ export interface IOrderItemProps {
 
 export interface IOrderItemStyled{
    isOrderMenu:boolean;
-   isChecked:boolean; 
+   isChecked:boolean;
+}
+
+export type OrderSummaryProps = {
+  order: IFormValues;
+};
+
+export interface IHomePageProps {
+  orderSubmit:(orderData:IFormValues)=>void;
+}
+
+export interface IPropsStyled {
+   location:string; 
 }

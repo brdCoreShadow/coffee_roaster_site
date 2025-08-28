@@ -4,7 +4,7 @@ import * as SC from "./BurgerMenuStyled";
 const BurgerMenu: React.FC = () => {
   return (
     <SC.BurgerMenuStyled>
-      <LinksList />
+      <LinksList location="menu"/>
     </SC.BurgerMenuStyled>
   );
 };

@@ -2,6 +2,9 @@ import { IOrderItemStyled } from "@/utils/types";
 import styled from "@emotion/styled";
 
 export const OrderItemStyled = styled.li`
+
+text-align: left;
+
   &:not(:last-of-type) {
     margin-bottom: 96px;
   }
