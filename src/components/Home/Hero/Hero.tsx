@@ -1,3 +1,4 @@
+import CreatePlanBtn from "@/components/CreatePlanBtn/CreataPlanBtn";
 import * as SC from "./HeroStyled";
 
 const Hero: React.FC = () => {
@@ -9,7 +10,7 @@ const Hero: React.FC = () => {
         curated artisan coffees from our best roasters delivered directly to
         your door, at your schedule.
       </p>
-      <a href="/subscribe">Create your plan</a>
+      <CreatePlanBtn/>
     </SC.HeroCon>
   );
 };
