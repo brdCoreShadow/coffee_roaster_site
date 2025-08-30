@@ -12,28 +12,28 @@ const Collection:React.FC = () => {
             <SC.List>
                 <li>
                     <div>
-                        <img src={espressoPic} alt="espresso" />
+                        <img src={espressoPic} alt="espresso" loading="lazy"/>
                     </div>
                     <h5>Gran Espresso</h5>
                     <p>Light and flavorful blend with cocoa and black pepper for an intense experience</p>
                 </li>
                 <li>
                     <div>
-                        <img src={planaltoPic} alt="planalto" />
+                        <img src={planaltoPic} alt="planalto" loading="lazy"/>
                     </div>
                     <h5>Planalto</h5>
                     <p>Brazilian dark roast with rich and velvety body, and hints of fruits and nuts</p>
                 </li>
                 <li>
                     <div>
-                        <img src={piccolloPic} alt="piccollo" />
+                        <img src={piccolloPic} alt="piccollo" loading="lazy"/>
                     </div>
                     <h5>Piccollo</h5>
                     <p>Mild and smooth blend featuring notes of toasted almond and dried cherry </p>
                 </li>
                 <li>
                     <div>
-                        <img src={danchePic} alt="danche" />
+                        <img src={danchePic} alt="danche" loading="lazy"/>
                     </div>
                     <h5>Danche</h5>
                     <p>Ethiopian hand-harvested blend densely packed with vibrant fruit notes</p>

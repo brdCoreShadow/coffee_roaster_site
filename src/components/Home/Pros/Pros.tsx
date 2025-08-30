@@ -18,7 +18,7 @@ const Pros: React.FC = () => {
       <SC.ProsList>
         <li>
           <div>
-            <img src={beanPic} alt="bean" />
+            <img src={beanPic} alt="bean" loading="lazy"/>
           </div>
           <h5>Best quality</h5>
           <p>
@@ -28,7 +28,7 @@ const Pros: React.FC = () => {
         </li>
         <li>
           <div>
-            <img src={presentPic} alt="present" />
+            <img src={presentPic} alt="present" loading="lazy"/>
           </div>
           <h5>Exclusive benefits</h5>
           <p>
@@ -38,7 +38,7 @@ const Pros: React.FC = () => {
         </li>
         <li>
           <div>
-            <img src={truckPic} alt="truck" />
+            <img src={truckPic} alt="truck" loading="lazy"/>
           </div>
           <h5>Free shipping</h5>
           <p>
