@@ -15,11 +15,27 @@ export const MainCon = styled.div`
 `;
 
 export const List = styled.ul`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
   & > li {
     color: #333d4b;
 
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+
     &:not(:last-of-type) {
       margin-bottom: 80px;
+
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+        margin-right: 42px;
+      }
     }
 
     & > div {
@@ -34,6 +50,11 @@ export const List = styled.ul`
       font-size: 28px;
       font-weight: 900;
       line-height: 1.29;
+
+      @media (min-width: 768px){
+        font-size: 24px;
+        line-height: 1.5;
+      }
     }
 
     & > p {

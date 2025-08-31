@@ -1,12 +1,17 @@
 import * as SC from "./QualityStyled"
 
 import qualityPicMob from "../../../assets/images/about/mobile/image-quality.jpg"
+import qualityPicTab from "../../../assets/images/about/tablet/image-quality.jpg"
+import { useScreenSize } from "@/hooks/useScreenSize";
 
 const Quality:React.FC = () => {
+
+const {isTablet} = useScreenSize()
+
   return (
     <SC.MainCon>
       <SC.PicThumb>
-        <img src={qualityPicMob} alt="quality" />
+        <img src={isTablet ? qualityPicTab : qualityPicMob} alt="quality" />
       </SC.PicThumb>
       <SC.ContentCon>
         <h3> Uncompromising quality</h3>

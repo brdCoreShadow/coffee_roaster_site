@@ -15,6 +15,13 @@ export const MainCon = styled.div`
   background-color: #2c343e;
 
   border-radius: 10px;
+
+  @media (min-width: 768px) {
+    padding-top: 224px;
+    padding-bottom: 68px;
+    padding-left: 74px;
+    padding-right: 74px;
+  }
 `;
 
 export const PicThumb = styled.div`
@@ -30,6 +37,16 @@ export const PicThumb = styled.div`
 
   border-radius: 10px;
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    top: 0%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 573px;
+    height: 320px;
+  }
 `;
 
 export const ContentCon = styled.div`
@@ -40,6 +57,11 @@ export const ContentCon = styled.div`
 
     font-size: 28px;
     font-weight: 900;
+
+    @media (min-width: 768px) {
+      font-size: 32px;
+      line-height: 1.5;
+    }
   }
 
   & > p {
