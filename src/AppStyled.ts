@@ -13,4 +13,8 @@ export const AppStyled = styled.div`
 
 export const FooterFlexCon = styled.div`
   margin-bottom: 48px;
+
+  @media (min-width: 768px){
+    text-align: center;
+  }
 `;

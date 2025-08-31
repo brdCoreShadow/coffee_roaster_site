@@ -3,9 +3,10 @@ import styled from "@emotion/styled";
 
 export const ListStyled = styled.ul<IPropsStyled>`
   @media (min-width: 768px) {
-    display: ${({ location }) => location === "header" && "flex"};
+    display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
   }
 
   & > li {
@@ -14,7 +15,9 @@ export const ListStyled = styled.ul<IPropsStyled>`
         location === "footer" ? "24px" : location === "header" ? "0" : "32px"};
 
       @media (min-width: 768px) {
-        margin-right: ${({ location }) => location === "header" && "32px"};
+        margin-bottom: 0;
+
+        margin-right: 32px;
       }
     }
 

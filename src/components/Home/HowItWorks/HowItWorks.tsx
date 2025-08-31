@@ -1,3 +1,4 @@
+import GeometryLine from "@/components/GeometryLine/GeometryLine";
 import * as SC from "./HowItWorksStyled"
 
 import CreatePlanBtn from "@/components/CreatePlanBtn/CreataPlanBtn";
@@ -6,6 +7,7 @@ const HowItWorks:React.FC = () => {
   return (
     <SC.MainCon>
       <h3>How it works</h3>
+      <GeometryLine/>
       <SC.List>
         <li>
           <h4>01</h4>
