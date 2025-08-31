@@ -1,22 +1,25 @@
+import { IPropsStyled } from "@/utils/types";
 import styled from "@emotion/styled";
 
-export const LogoCon = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
+export const LogoCon = styled.div<Partial<IPropsStyled>>`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-& > h3{
-    font-size: 16px;
+  margin-bottom: ${({ location }) => (location === "footer" && "48px")};;
 
-    color: #333D4B;
-}
-`
+  & > h3 {
+    font-size: ${({ location }) => (location === "footer" ? "22px" : "16px")};
 
-export const LogoIconThumb = styled.div`
-display: inline-block;
+    color: ${({ location }) => (location === "footer" ? "#fff" : "#333D4B")};
+  }
+`;
 
-width: 17px;
-height: 17px;
+export const LogoIconThumb = styled.div<Partial<IPropsStyled>>`
+  display: inline-block;
 
-margin-right: 6px;
-`
+  width: ${({ location }) => (location === "footer" ? "22px" : "17px")};
+  height: ${({ location }) => (location === "footer" ? "22px" : "17px")};
+
+  margin-right: 6px;
+`;

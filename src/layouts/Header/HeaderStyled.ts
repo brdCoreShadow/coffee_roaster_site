@@ -5,4 +5,9 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
+
+padding-top: 32px;
+padding-bottom: 40px;
+padding-left: 24px;
+padding-right: 24px;
 `
