@@ -39,6 +39,7 @@ export type OrderSummaryProps = {
 
 export interface ISubscribePageProps {
   orderSubmit:(orderData:IFormValues)=>void;
+  openSummary:()=>void;
 }
 
 export interface IPropsStyled {
@@ -48,4 +49,10 @@ export interface IPropsStyled {
 export type TMenuBtnToggle = {
   toggleMenu:()=>void;
   isMenu:boolean;  
+}
+
+export interface ISummary {
+  closeSummary:()=>void;
+  resetOrder:()=>void;
+  isSummary:boolean;
 }

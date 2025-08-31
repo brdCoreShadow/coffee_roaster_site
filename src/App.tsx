@@ -5,7 +5,7 @@ import Logo from "./components/Logo/Logo";
 import Header from "./layouts/Header/Header";
 import SharedLayout from "./layouts/SharedLayout/SharedLayout";
 import { lazy, Suspense, useEffect, useState } from "react";
-import BurgerPortal from "./components/Portal/Portal";
+import BurgerPortal from "./components/Portal/BurgerPortal";
 import BurgerMenu from "./components/BurgerMenu/BurgerMenu";
 import { IFormValues } from "./utils/types";
 import Footer from "./layouts/Footer/Footer";
@@ -13,6 +13,9 @@ import LinksList from "./components/LinksList/LinksList";
 import SocNet from "./components/SocNet/SocNet";
 import { useToggleMenu } from "./hooks/useToggleMenu";
 import Loading from "./components/Loading/Loading";
+import { useToggleSummary } from "./hooks/useToggleSummary";
+import SummaryPortal from "./components/Portal/SummaryPortal";
+import Summary from "./components/Summary/Summary";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage/AboutPage"));
@@ -23,6 +26,7 @@ const App: React.FC = () => {
   const [order, setOrder] = useState<IFormValues | null>(null);
 
   const { isMenu, toggleMenu } = useToggleMenu();
+  const { isSummary, openSummary, closeSummary } = useToggleSummary();
 
   const orderSubmit = (orderData: IFormValues) => {
     setOrder(orderData);
@@ -40,6 +44,10 @@ const App: React.FC = () => {
     };
   }, [isMenu]);
 
+const resetOrder = () => {
+  setOrder(null)
+}
+
   console.log(order);
 
   return (
@@ -53,14 +61,19 @@ const App: React.FC = () => {
           <BurgerMenu />
         </BurgerPortal>
       )}
-      <Suspense fallback={<Loading/>}>
+      {isSummary && (
+        <SummaryPortal>
+          <Summary closeSummary={closeSummary} resetOrder={resetOrder} isSummary={isSummary}/>
+        </SummaryPortal>
+      )}
+      <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<HomePage />} />
             <Route path="about" element={<AboutPage />} />
             <Route
               path="subscribe"
-              element={<SubscribePage orderSubmit={orderSubmit} />}
+              element={<SubscribePage orderSubmit={orderSubmit} openSummary={openSummary}/>}
             />
             <Route path="*" element={<NotFound />} />
           </Route>
