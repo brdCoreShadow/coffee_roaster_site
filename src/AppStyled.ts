@@ -17,4 +17,12 @@ export const FooterFlexCon = styled.div`
   @media (min-width: 768px){
     text-align: center;
   }
+
+  @media (min-width: 1280px){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-bottom: 0;
+  }
 `;

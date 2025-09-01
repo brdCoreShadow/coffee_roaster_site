@@ -15,4 +15,11 @@ export const FooterStyled = styled.footer`
   background-color: #2c343e;
 
   border-radius: 12px;
+
+  @media (min-width: 1280px){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+  }
 `;

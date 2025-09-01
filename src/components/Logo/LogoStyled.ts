@@ -12,6 +12,11 @@ export const LogoCon = styled.div<Partial<IPropsStyled>>`
     justify-content: center;
   }
 
+  @media (min-width: 1280px){
+    margin-bottom: 0;
+    margin-right: 100px;
+  }
+
   & > h3 {
     font-size: ${({ location }) => (location === "footer" ? "22px" : "16px")};
 
