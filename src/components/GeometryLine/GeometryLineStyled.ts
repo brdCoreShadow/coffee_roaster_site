@@ -1,3 +1,4 @@
+import { IPropsStyled } from "@/utils/types";
 import styled from "@emotion/styled";
 
 export const Line = styled.div`
@@ -12,7 +13,7 @@ export const Line = styled.div`
   background-color: #fdd6ba;
 `;
 
-export const CircleList = styled.ul`
+export const CircleList = styled.ul<IPropsStyled>`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -30,7 +31,7 @@ export const CircleList = styled.ul`
     width: 31px;
     height: 31px;
 
-    background-color: #FEFCF7;
+    background-color: ${({location}) => location === "subscribe" ? "transparent" : "#FEFCF7"};
 
     border: 1px solid #0e8784;
 

@@ -7,7 +7,7 @@ const HowItWorks:React.FC = () => {
   return (
     <SC.MainCon>
       <h3>How it works</h3>
-      <GeometryLine/>
+      <GeometryLine location="home"/>
       <SC.List>
         <li>
           <h4>01</h4>

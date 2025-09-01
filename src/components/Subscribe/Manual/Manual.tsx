@@ -1,8 +1,14 @@
+import { useScreenSize } from "@/hooks/useScreenSize";
 import * as SC from "./ManaulStyled"
+import GeometryLine from "@/components/GeometryLine/GeometryLine";
 
 const Manual:React.FC = () => {
+
+const {isMobile} = useScreenSize()
+
   return (
     <SC.ManualCon>
+      {!isMobile && <GeometryLine location="subscribe"/>}
       <SC.List>
         <li>
           <h3>01</h3>
