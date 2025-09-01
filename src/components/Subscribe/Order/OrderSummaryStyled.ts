@@ -14,6 +14,13 @@ export const OrderSummaryCon = styled.div`
 
   border-radius: 12px;
 
+@media (min-width: 768px){
+  padding-top: 28px;
+  padding-bottom: 28px;
+  padding-left: 44px;
+  padding-right: 44px;
+}
+
   & > p {
     margin-bottom: 8px;
 

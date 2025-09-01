@@ -12,6 +12,11 @@ export const Wrapper = styled.div`
   background-color: #000;
 
   opacity: 0.7;
+
+  @media (min-width: 768px){
+    height: 100%;
+
+  }
 `;
 
 export const MainCon = styled.div`
@@ -33,6 +38,15 @@ transform: translate(24px, 36px);
   border-radius: 10px;
 
   overflow: hidden;
+
+@media (min-width: 768px){
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 540px;
+}
 `;
 
 export const TitleCon = styled.div`
