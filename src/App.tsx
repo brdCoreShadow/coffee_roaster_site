@@ -16,6 +16,7 @@ import Loading from "./components/Loading/Loading";
 import { useToggleSummary } from "./hooks/useToggleSummary";
 import SummaryPortal from "./components/Portal/SummaryPortal";
 import Summary from "./components/Summary/Summary";
+import { useScreenSize } from "./hooks/useScreenSize";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage/AboutPage"));
@@ -27,6 +28,7 @@ const App: React.FC = () => {
 
   const { isMenu, toggleMenu } = useToggleMenu();
   const { isSummary, openSummary, closeSummary } = useToggleSummary();
+  const { isMobile } = useScreenSize();
 
   const orderSubmit = (orderData: IFormValues) => {
     setOrder(orderData);
@@ -44,9 +46,9 @@ const App: React.FC = () => {
     };
   }, [isMenu]);
 
-const resetOrder = () => {
-  setOrder(null)
-}
+  const resetOrder = () => {
+    setOrder(null);
+  };
 
   console.log(order);
 
@@ -54,7 +56,11 @@ const resetOrder = () => {
     <SC.AppStyled>
       <Header>
         <Logo location="header" />
-        <BurgerBtn toggleMenu={toggleMenu} isMenu={isMenu} />
+        {isMobile ? (
+          <BurgerBtn toggleMenu={toggleMenu} isMenu={isMenu} />
+        ) : (
+          <LinksList location="header"/>
+        )}
       </Header>
       {isMenu && (
         <BurgerPortal>
@@ -63,7 +69,11 @@ const resetOrder = () => {
       )}
       {isSummary && (
         <SummaryPortal>
-          <Summary closeSummary={closeSummary} resetOrder={resetOrder} isSummary={isSummary}/>
+          <Summary
+            closeSummary={closeSummary}
+            resetOrder={resetOrder}
+            isSummary={isSummary}
+          />
         </SummaryPortal>
       )}
       <Suspense fallback={<Loading />}>
@@ -73,7 +83,12 @@ const resetOrder = () => {
             <Route path="about" element={<AboutPage />} />
             <Route
               path="subscribe"
-              element={<SubscribePage orderSubmit={orderSubmit} openSummary={openSummary}/>}
+              element={
+                <SubscribePage
+                  orderSubmit={orderSubmit}
+                  openSummary={openSummary}
+                />
+              }
             />
             <Route path="*" element={<NotFound />} />
           </Route>

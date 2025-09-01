@@ -2,11 +2,14 @@ import { IOrderItemStyled } from "@/utils/types";
 import styled from "@emotion/styled";
 
 export const OrderItemStyled = styled.li`
-
-text-align: left;
+  text-align: left;
 
   &:not(:last-of-type) {
     margin-bottom: 96px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 100px;
+    }
   }
 `;
 
@@ -53,6 +56,12 @@ export const OrderBtn = styled.button<Partial<IOrderItemStyled>>`
 
 export const List = styled.ul<Partial<IOrderItemStyled>>`
   display: ${({ isOrderMenu }) => (isOrderMenu ? "block" : "none")};
+
+  @media (min-width: 768px) {
+    display: ${({ isOrderMenu }) => (isOrderMenu ? "flex" : "none")};
+    flex-direction: row;
+    align-items: flex-start;
+  }
 `;
 
 export const SubItem = styled.li<Partial<IOrderItemStyled>>`
@@ -63,9 +72,16 @@ export const SubItem = styled.li<Partial<IOrderItemStyled>>`
   padding-left: 24px;
   padding-right: 24px;
 
-  background-color: ${({isChecked}) => isChecked ? "#0E8784" : "#f4f1eb"};
+  background-color: ${({ isChecked }) => (isChecked ? "#0E8784" : "#f4f1eb")};
 
   border-radius: 8px;
+
+@media (min-width: 768px){
+  padding-top: 32px;
+  padding-bottom: 84px;
+  padding-left: 26px;
+  padding-right: 26px;
+}
 
   & > h5 {
     margin-bottom: 8px;
@@ -74,19 +90,28 @@ export const SubItem = styled.li<Partial<IOrderItemStyled>>`
     line-height: 1.33;
     font-weight: 900;
 
-    color:${({isChecked}) => isChecked ? "#fff" : "#333D4B"};
+    color: ${({ isChecked }) => (isChecked ? "#fff" : "#333D4B")};
+
+    @media (min-width: 768px){
+      margin-bottom: 24px;
+    }
   }
 
-  & > p{
+  & > p {
     font-size: 16px;
     line-height: 1.63;
 
-   color:${({isChecked}) => isChecked ? "#fff" : "#333D4B"};
-   opacity:0.7;
+    color: ${({ isChecked }) => (isChecked ? "#fff" : "#333D4B")};
+    opacity: 0.7;
   }
 
   &:not(:last-of-type) {
     margin-bottom: 16px;
+
+    @media (min-width: 768px){
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
   }
 `;
 

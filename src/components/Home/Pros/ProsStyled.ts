@@ -4,6 +4,10 @@ export const MainCon = styled.div`
   position: relative;
 
   margin-bottom: 700px;
+
+  @media (min-width: 768px){
+    margin-bottom: 434px;
+  }
 `;
 
 export const ProsCon = styled.div`
@@ -20,11 +24,23 @@ export const ProsCon = styled.div`
 
   border-radius: 10px;
 
+  @media (min-width: 768px){
+    padding-top: 56px;
+    padding-bottom: 368px;
+    padding-left: 74px;
+    padding-right: 74px;
+  }
+
   & > h3 {
     margin-bottom: 24px;
 
     font-size: 24px;
     font-weight: 900;
+
+    @media (min-width: 768px){
+      font-size: 32px;
+      line-height: 1.5;
+    }
   }
 
   & > p {
@@ -40,6 +56,10 @@ export const ProsList = styled.ul`
   left: 50%;
 
   transform: translate(-50%, 25%);
+
+  @media (min-width: 768px){
+    transform: translate(-50%, 45%);
+  }
 
   & > li {
     width: 279px;
@@ -57,19 +77,41 @@ export const ProsList = styled.ul`
 
     border-radius: 8px;
 
+    @media (min-width: 768px){
+      width: 573px;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      padding-top: 42px;
+      padding-bottom: 42px;
+      padding-left: 70px;
+      padding-right: 48px;
+
+      text-align: left;
+    }
+
     &:not(:last-of-type) {
       margin-bottom: 24px;
     }
 
-    & > div {
+    & > div:first-of-type {
       display: inline-block;
       width: 72px;
       height: 72px;
 
       margin-bottom: 56px;
+
+      @media (min-width: 768px){
+        margin-bottom: 0;
+        margin-right: 54px;
+
+      }
     }
 
-    & > h5 {
+    &  h5 {
       margin-bottom: 24px;
 
       font-size: 24px;
@@ -77,7 +119,7 @@ export const ProsList = styled.ul`
       font-weight: 900;
     }
 
-    & > p {
+    &  p {
       font-size: 15px;
       line-height: 1.67;
 

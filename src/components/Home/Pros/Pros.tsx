@@ -18,33 +18,39 @@ const Pros: React.FC = () => {
       <SC.ProsList>
         <li>
           <div>
-            <img src={beanPic} alt="bean" loading="lazy"/>
+            <img src={beanPic} alt="bean" loading="lazy" />
           </div>
-          <h5>Best quality</h5>
-          <p>
-            Discover an endless variety of the world’s best artisan coffee from
-            each of our roasters.
-          </p>
+          <div>
+            <h5>Best quality</h5>
+            <p>
+              Discover an endless variety of the world’s best artisan coffee
+              from each of our roasters.
+            </p>
+          </div>
         </li>
         <li>
           <div>
-            <img src={presentPic} alt="present" loading="lazy"/>
+            <img src={presentPic} alt="present" loading="lazy" />
           </div>
-          <h5>Exclusive benefits</h5>
-          <p>
-            Special offers and swag when you subscribe, including 30% off your
-            first shipment.
-          </p>
+          <div>
+            <h5>Exclusive benefits</h5>
+            <p>
+              Special offers and swag when you subscribe, including 30% off your
+              first shipment.
+            </p>
+          </div>
         </li>
         <li>
           <div>
-            <img src={truckPic} alt="truck" loading="lazy"/>
+            <img src={truckPic} alt="truck" loading="lazy" />
           </div>
-          <h5>Free shipping</h5>
-          <p>
-            We cover the cost and coffee is delivered fast. Peak freshness:
-            guaranteed.
-          </p>
+          <div>
+            <h5>Free shipping</h5>
+            <p>
+              We cover the cost and coffee is delivered fast. Peak freshness:
+              guaranteed.
+            </p>
+          </div>
         </li>
       </SC.ProsList>
     </SC.MainCon>

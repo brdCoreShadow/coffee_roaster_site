@@ -5,8 +5,12 @@ export const OrderCon = styled.form`
 `;
 
 export const List = styled.ul`
-margin-bottom: 120px;
-`
+  margin-bottom: 120px;
+
+  @media (min-width: 768px) {
+   margin-bottom: 144px;
+  }
+`;
 
 export const SubmitBtn = styled.button`
   width: 217px;
