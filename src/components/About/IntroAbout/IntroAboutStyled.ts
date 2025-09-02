@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 import bgIntroAboutMob from "../../../assets/images/about/mobile/image-hero-whitecup.jpg"
 import bgIntroAboutTab from "../../../assets/images/about/tablet/image-hero-whitecup.jpg"
+import bgIntroAboutDesk from "../../../assets/images/about/desktop/image-hero-whitecup.jpg"
 
 export const MainCon = styled.div`
 margin-bottom: 120px;
@@ -31,6 +32,18 @@ border-radius: 10px;
     background-image: url(${bgIntroAboutTab});
 }
 
+@media (min-width: 1280px){
+    margin-bottom: 168p;
+
+    padding-top: 136px;
+    padding-bottom: 136px;
+    padding-left: 86px;
+    padding-right: 550px;
+
+    background-image: url(${bgIntroAboutDesk});
+    background-size: cover;
+}
+
 & > h3{
     margin-bottom: 24px;
 
@@ -43,6 +56,11 @@ border-radius: 10px;
         font-size: 32px;
         line-height: 1.25;
     }
+
+    @media (min-width: 1280px){
+        font-size: 40px;
+        line-height: 1.2;
+    }
 }
 
 & > p{
@@ -50,5 +68,9 @@ border-radius: 10px;
     line-height: 1.67;
 
     color: #FEFCF7;
+
+    @media (min-width: 1280px){
+        font-size: 16px;
+    }
 }
 `

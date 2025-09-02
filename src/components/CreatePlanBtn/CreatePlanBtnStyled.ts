@@ -18,4 +18,16 @@ export const BtnStyled = styled.a`
   background-color: #0e8784;
 
   border-radius: 6px;
+
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+
+    background-color: #66d2cf;
+
+    transition: all 0.3s;
+  }
 `;

@@ -1,18 +1,20 @@
+import { useScreenSize } from "@/hooks/useScreenSize"
+
 import * as SC from "./CommitmentStyled"
 
 import commitmentPicMob from "../../../assets/images/about/mobile/image-commitment.jpg"
 import commitmentPicTab from "../../../assets/images/about/tablet/image-commitment.jpg"
-import { useScreenSize } from "@/hooks/useScreenSize"
+import commitmentPicDesk from "../../../assets/images/about/desktop/image-commitment.jpg"
 
 const Commitment:React.FC = () => {
 
-const {isTablet} = useScreenSize()
+const {isTablet, isDesktop} = useScreenSize()
 
     return ( 
         <SC.MainCon>
             <SC.PicThumb>
                
-                <img src={isTablet ? commitmentPicTab : commitmentPicMob} alt="commitment" loading="lazy"/>
+                <img src={isTablet ? commitmentPicTab : isDesktop ? commitmentPicDesk : commitmentPicMob} alt="commitment" loading="lazy"/>
             </SC.PicThumb>
             <SC.ContentCon>
                 <h3>Our commitment</h3>
