@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 import heroCupPicMob from "../../../assets/images/home/mobile/image-hero-blackcup.jpg";
 import heroCupPicTab from "../../../assets/images/plan/tablet/image-hero-blackcup.jpg";
+import heroCupPicDesk from "../../../assets/images/plan/desktop/image-hero-blackcup.jpg"
 
 export const IntroCon = styled.div`
   margin-bottom: 120px;
@@ -32,6 +33,17 @@ export const IntroCon = styled.div`
 
     background-image: url(${heroCupPicTab});
     background-size: cover;
+  }
+
+  @media (min-width: 1280px){
+    margin-bottom: 168px;
+
+    padding-top: 134px;
+    padding-bottom: 134px;
+    padding-left: 36px;
+    padding-right: 608px;
+
+    background-image: url(${heroCupPicDesk});
   }
 
   & > h3 {
