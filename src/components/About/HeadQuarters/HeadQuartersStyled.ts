@@ -3,6 +3,10 @@ import styled from "@emotion/styled";
 export const MainCon = styled.div`
   text-align: center;
 
+@media (min-width: 1280px){
+    text-align: left;
+}
+
   & > h3 {
     margin-bottom: 72px;
 
@@ -35,6 +39,10 @@ export const List = styled.ul`
       @media (min-width: 768px) {
         margin-bottom: 0;
         margin-right: 42px;
+      }
+
+      @media (min-width: 1280px){
+        margin-right: 196px;
       }
     }
 

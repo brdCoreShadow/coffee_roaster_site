@@ -17,4 +17,11 @@ padding-right: 24px;
     padding-left: 40px;
     padding-right: 40px;
 }
+
+@media (min-width: 1280px){
+    padding-top: 44px;
+    padding-bottom: 44px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
 `

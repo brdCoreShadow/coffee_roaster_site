@@ -35,6 +35,21 @@ export const ListStyled = styled.ul<IPropsStyled>`
 
       color: ${({ location }) =>
         location === "footer" || location === "header" ? "#83888F" : "#333D4B"};
+
+      @media (min-width: 1280px) {
+        transition: color 0.3s;
+
+        &:hover,
+        &:active,
+        &:focus {
+          cursor: pointer;
+
+          color: ${({ location }) =>
+            location === "footer" ? "#fff" : "#333D4B"};
+        }
+
+        transition: color 0.3s;
+      }
     }
   }
 `;

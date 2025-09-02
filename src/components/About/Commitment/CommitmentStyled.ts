@@ -11,6 +11,10 @@ export const MainCon = styled.div`
 
     margin-bottom: 304px;
   }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 256px;
+  }
 `;
 
 export const PicThumb = styled.div`
@@ -32,6 +36,13 @@ export const PicThumb = styled.div`
       height: 100%;
     }
   }
+
+  @media (min-width: 1280px) {
+    width: 445px;
+    height: 520px;
+
+    margin-right: 125px;
+  }
 `;
 
 export const ContentCon = styled.div`
@@ -45,16 +56,31 @@ export const ContentCon = styled.div`
     text-align: left;
   }
 
+  @media (min-width: 1280px) {
+    width: 540px;
+  }
+
   & > h3 {
     margin-bottom: 30px;
 
     font-size: 32px;
     font-weight: 900;
     line-height: 1.5;
+
+    @media (min-width: 1280px) {
+      margin-bottom: 32px;
+
+      font-size: 40px;
+      line-height: 1.2;
+    }
   }
 
   & > p {
     font-size: 15px;
     line-height: 1.7;
+
+    @media (min-width: 1280px){
+        font-size: 16px;
+    }
   }
 `;

@@ -24,6 +24,17 @@ border-radius: 10px;
     padding-left: 40px;
     padding-right: 40px;
 }
+
+@media (min-width: 1280px){
+    margin-bottom: 168px;
+    margin-left: 0;
+    margin-right: 0;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 86px;
+    padding-right: 150px;
+}
 `
 
 export const List = styled.ul`
@@ -83,6 +94,10 @@ text-align: center;
     @media (min-width: 768px){
         margin-bottom: 0;
         margin-right: 16px;
+    }
+
+    @media (min-width: 1280px){
+        margin-right: 86px;
     }
 }
 `

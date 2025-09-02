@@ -22,6 +22,15 @@ export const MainCon = styled.div`
     padding-left: 74px;
     padding-right: 74px;
   }
+
+  @media (min-width: 1280px) {
+    padding-top: 88px;
+    padding-bottom: 176px;
+    padding-left: 86px;
+    padding-right: 655px;
+
+    text-align: left;
+  }
 `;
 
 export const PicThumb = styled.div`
@@ -47,6 +56,14 @@ export const PicThumb = styled.div`
     width: 573px;
     height: 320px;
   }
+
+  @media (min-width: 1280px){
+    width: 445px;
+    height: 474px;
+
+    transform: translate(0%, -30%);
+
+  }
 `;
 
 export const ContentCon = styled.div`
@@ -62,10 +79,23 @@ export const ContentCon = styled.div`
       font-size: 32px;
       line-height: 1.5;
     }
+
+    @media (min-width: 1280px){
+        margin-bottom: 32px;
+
+        font-size: 40px;
+        line-height: 1.2;
+    }
   }
 
   & > p {
     font-size: 15px;
     line-height: 1.67;
+
+    opacity: 0.7;
+
+    @media (min-width: 1280px){
+        font-size: 16px;
+    }
   }
 `;

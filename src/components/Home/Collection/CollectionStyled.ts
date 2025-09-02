@@ -11,6 +11,10 @@ export const CollectionCon = styled.div`
     margin-bottom: 144px;
   }
 
+  @media (min-width: 1280px){
+    margin-bottom: 200px;
+  }
+
   & > h3 {
     margin-bottom: 12px;
 
@@ -37,10 +41,21 @@ export const CollectionCon = styled.div`
 
       font-size: 112px;
     }
+
+    @media (min-width: 1280px){
+      font-size: 190px;
+    }
   }
 `;
 
 export const List = styled.ul`
+
+@media (min-width: 1280px){
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
   & > li {
     @media (min-width: 768px) {
       display: flex;
@@ -51,11 +66,22 @@ export const List = styled.ul`
       text-align: left;
     }
 
+    @media (min-width: 1280px){
+    flex-direction:column;
+
+    text-align: center;
+    }
+
     &:not(:last-of-type) {
       margin-bottom: 48px;
 
       @media (min-width: 768px) {
         margin-bottom: 32px;
+      }
+
+      @media (min-width: 1280px){
+        margin-bottom: 0;
+        margin-right: 30px;
       }
     }
 

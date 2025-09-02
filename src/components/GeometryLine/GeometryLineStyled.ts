@@ -11,6 +11,10 @@ export const Line = styled.div`
   margin-bottom: 48px;
 
   background-color: #fdd6ba;
+
+  @media (min-width: 1280px){
+    width: 760px;
+  }
 `;
 
 export const CircleList = styled.ul<IPropsStyled>`
